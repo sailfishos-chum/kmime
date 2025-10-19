@@ -8,8 +8,10 @@ Release:    1%{?dist}
 License:    ASL-2.0 and BSD-3-Clause and CC0-1.0 and LGPLv2+
 Summary:    Library to assist handling MIME data
 Url:        https://invent.kde.org/pim/%{pkgname}
-#Source0:    https://invent.kde.org/pim/%{pkgname}/-/archive/v%{version}/%{pkgname}-v%{version}.tar.bz2
+#Source0:    https://invent.kde.org/pim/%%{pkgname}/-/archive/v%%{version}/%%{pkgname}-v%%{version}.tar.bz2
 Source0:    %{name}-%{version}.tar.bz2
+
+Provides:   %{pkgname} = %{version}-%{release}
 
 BuildRequires: kf6-extra-cmake-modules >= %kf6_version
 BuildRequires: gcc-c++
@@ -36,6 +38,7 @@ BuildRequires:  kf6-kconfig-devel
 Summary:    Development files for %{name}
 License:    ASL-2.0 and BSD-3-Clause and CC0-1.0 and LGPLv2+
 Requires:   %{name}%{?_isa} = %{version}-%{release}
+Provides:   %{pkgname}-devel = %{version}-%{release}
 
 %description devel
 The %{name}-devel package contains libraries and header files for
